@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobilebudget/setting.dart';
 
 class homepage extends StatefulWidget {
   const homepage({super.key});
@@ -38,9 +39,9 @@ class _homepageState extends State<homepage> {
               height: 28,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [_teal, _green],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                  colors: [Colors.orange],
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -60,7 +61,12 @@ class _homepageState extends State<homepage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const setting()),
+              );
+            },
             icon: const Icon(Icons.settings_outlined, color: _textMuted),
           ),
         ],
@@ -128,7 +134,7 @@ class _homepageState extends State<homepage> {
                       width: 8,
                       height: 8,
                       decoration: const BoxDecoration(
-                        color: _green,
+                        color: Colors.green,
                         shape: BoxShape.circle,
                       ),
                     ),
@@ -140,6 +146,7 @@ class _homepageState extends State<homepage> {
                   ],
                 ),
                 const SizedBox(height: 12),
+                // income
                 const Text(
                   "\$3,769.26",
                   style: TextStyle(
@@ -180,7 +187,7 @@ class _homepageState extends State<homepage> {
           // ── Income / Expenses Row ─────────────────────────────
           Row(
             children: [
-              Expanded(child: _statCard("Income", "\$3,950.00", Icons.arrow_downward_rounded, _teal)),
+              Expanded(child: _statCard("Income", "\$111", Icons.arrow_downward_rounded, _teal)),
               const SizedBox(width: 12),
               Expanded(child: _statCard("Expenses", "\$180.74", Icons.arrow_upward_rounded, const Color(0xFFFF5A7D))),
             ],
