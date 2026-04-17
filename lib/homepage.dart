@@ -11,16 +11,16 @@ class homepage extends StatefulWidget {
 class _homepageState extends State<homepage> {
   int _selectedIndex = 0;
 
-  // ── Theme Colors (Flux-inspired) ─────────────────────────────
-  static const Color _bgDark      = Color(0xFF050E1A);   // deep navy black
-  static const Color _bgCard      = Color(0xFF0D1F30);   // card surface
-  static const Color _bgCardAlt   = Color(0xFF0A1A28);   // alt card
-  static const Color _teal        = Color(0xFF00D4AA);   // primary teal/cyan
-  static const Color _tealDim     = Color(0xFF00A882);   // dimmed teal
-  static const Color _green       = Color(0xFF39E079);   // bright green (CTA)
-  static const Color _textPrimary = Color(0xFFE8F4F0);   // off-white
-  static const Color _textMuted   = Color(0xFF6A9E8A);   // muted teal-grey
-  static const Color _border      = Color(0xFF1A3A50);   // subtle border
+  // ── Theme Colors ─────────────────────────────────────────────
+  static const Color _bgDark      = Color(0xFF060B18);   // primary background
+  static const Color _bgCard      = Color(0xFF0F1A2E);   // card surface
+  static const Color _bgCardAlt   = Color(0xFF16243D);   // alt card
+  static const Color _teal        = Color(0xFF10E8A0);   // primary accent
+  static const Color _tealDim     = Color(0xFF0CC880);   // dimmed accent
+  static const Color _green       = Color(0xFF10E8A0);   // bright green (CTA)
+  static const Color _textPrimary = Color(0xFFEEF2FF);   // primary text
+  static const Color _textMuted   = Color(0xFF6B7FA3);   // muted text
+  static const Color _border      = Color(0x0FFFFFFF);   // subtle border
 
   @override
   Widget build(BuildContext context) {
@@ -189,7 +189,7 @@ class _homepageState extends State<homepage> {
             children: [
               Expanded(child: _statCard("Income", "\$111", Icons.arrow_downward_rounded, _teal)),
               const SizedBox(width: 12),
-              Expanded(child: _statCard("Expenses", "\$180.74", Icons.arrow_upward_rounded, const Color(0xFFFF5A7D))),
+              Expanded(child: _statCard("Expenses", "\$180.74", Icons.arrow_upward_rounded, const Color(0xFFFF4D6D))),
             ],
           ),
 
@@ -218,8 +218,8 @@ class _homepageState extends State<homepage> {
           const SizedBox(height: 14),
 
           // ── Transactions ──────────────────────────────────────
-          _transactionTile(Icons.shopping_basket_outlined, "Grocery Run",   "Food",          "-\$87.45",    const Color(0xFFFFAA00)),
-          _transactionTile(Icons.play_circle_outline,      "Netflix",        "Entertainment", "-\$15.99",    const Color(0xFFFF5A7D)),
+          _transactionTile(Icons.shopping_basket_outlined, "Grocery Run",   "Food",          "-\$87.45",    const Color(0xFFFC4C56)),
+          _transactionTile(Icons.play_circle_outline,      "Netflix",        "Entertainment", "-\$15.99",    const Color(0xFFFF4D6D)),
           _transactionTile(Icons.directions_car_outlined,  "Uber",           "Transport",     "-\$12.30",    _teal),
           _transactionTile(Icons.account_balance_wallet_outlined, "Salary",  "Income",        "+\$3,500.00", _green),
         ],
@@ -311,14 +311,14 @@ class _homepageState extends State<homepage> {
               ],
             ),
           ),
-          Text(
-            amount,
-            style: TextStyle(
-              color: isIncome ? _green : const Color(0xFFFF5A7D),
-              fontWeight: FontWeight.bold,
-              fontSize: 14,
-            ),
-          ),
+           Text(
+             amount,
+             style: TextStyle(
+               color: isIncome ? _green : const Color(0xFFFF4D6D),
+               fontWeight: FontWeight.bold,
+               fontSize: 14,
+             ),
+           ),
         ],
       ),
     );
